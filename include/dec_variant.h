@@ -6,6 +6,7 @@ namespace DecVar {
 enum class DecVariantType{
     ONE_WAY_BOOL,
     UNIQUE_ID,
+    LIMITED_NUMERIC,
 };
 
 struct DecVariant {

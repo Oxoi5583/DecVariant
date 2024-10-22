@@ -54,7 +54,6 @@ public:
 
 }
 
-
 namespace std {
     inline std::string to_string(DecVar::UniqueId const &uid) {
         return uid.to_str();
