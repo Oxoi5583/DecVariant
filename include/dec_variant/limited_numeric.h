@@ -19,6 +19,9 @@ concept arithmetic = std::integral<T> or std::floating_point<T>;
 template<typename T>
 requires arithmetic<T>
 struct LimitedNumeric : public DecVariant {
+    ////////////////////////////////////////////////////////////
+    //  A Simple struct for a number which would out of range //
+    ////////////////////////////////////////////////////////////
 public:
     LimitedNumeric(T _val ,T _min, T _max) 
     : DecVariant(DecVariantType::LIMITED_NUMERIC) 

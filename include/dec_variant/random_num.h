@@ -13,6 +13,10 @@
 namespace DecVar {
 
 struct RandomNum : public DecVariant {
+    ///////////////////////////////////////////////////////////////////////
+    //  A Simple struct which will get a new Random Number in a range    //
+    //  This struct was design for a Simple UID                          //                     
+    ///////////////////////////////////////////////////////////////////////
 private:
     const int _min;
     const int _max;

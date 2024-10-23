@@ -15,6 +15,10 @@
 namespace DecVar {
 
 struct RandomCode : public DecVariant {
+    ///////////////////////////////////////////////////////////////////////////////////////////
+    //  A Simple struct which will get a new Random String with number and UpperCase Char    //
+    //  This struct was design for a Simple UID                                              //                         
+    ///////////////////////////////////////////////////////////////////////////////////////////
 private:
     const length _len;
     const std::string _val ;
