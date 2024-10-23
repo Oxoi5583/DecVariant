@@ -23,7 +23,7 @@ private:
     const int _val ;
 public:
     inline RandomNum(int min_val = 0, int max_val = 50) 
-    : DecVariant(DecVariantType::RANDOM_CODE) 
+    : DecVariant(DecVariantType::RANDOM_NUM) 
     , _min(min_val)
     , _max(max_val)
     , _val(RandomServer::get_singleton()->get_random_int(min_val, max_val)){

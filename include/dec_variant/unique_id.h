@@ -1,6 +1,7 @@
 #ifndef DEC_VARIANT_UNIQUE_ID
 #define DEC_VARIANT_UNIQUE_ID
 
+#include <functional>
 #ifndef DEC_VARIANT_MAIN
     #define DEC_VARIANT_SUB
     #include <dec_variant.h>
@@ -16,10 +17,10 @@ namespace DecVar {
 typedef unsigned long long LONGUINT;
 
 struct UniqueId : public DecVariant {
-    //////////////////////////////////////////////////////////////////////
-    //  A Simple struct which will get a new const 64bit int value      //
-    //  This struct was design for a Simple UID                         //
-    //////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////
+    //  A Simple struct which will get a new const 64bit incremental int value  //
+    //  This struct was design for a Simple UID                                 //
+    //////////////////////////////////////////////////////////////////////////////
 private:
     inline static LONGUINT next_id = 0;
     inline static LONGUINT get_new_id(){

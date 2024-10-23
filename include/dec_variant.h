@@ -7,7 +7,10 @@ enum class DecVariantType{
     ONE_WAY_BOOL,
     UNIQUE_ID,
     LIMITED_NUMERIC,
-    RANDOM_CODE
+    RANDOM_CODE,
+    RANDOM_NUM,
+    CYCLE_VECTOR,
+    CYCLE_NUMERIC,
 };
 
 struct DecVariant {
