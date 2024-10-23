@@ -1,2 +1,2 @@
-A Simple Header only Library for Defining Variant.
-This Library was mainly built for my indie game development.
+A Simple Header only library for some intresting data type.</br>
+This Library was built for my own indie game development.</br>
