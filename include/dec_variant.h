@@ -7,6 +7,7 @@ enum class DecVariantType{
     ONE_WAY_BOOL,
     UNIQUE_ID,
     LIMITED_NUMERIC,
+    RANDOM_CODE
 };
 
 struct DecVariant {
@@ -32,5 +33,8 @@ public:
 #include <dec_variant/one_way_bool.h>
 #include <dec_variant/unique_id.h>
 #include <dec_variant/limited_numeric.h>
+#include <dec_variant/random_server.h>
+#include <dec_variant/random_code.h>
+#include <dec_variant/random_num.h>
 
 #endif
