@@ -181,7 +181,9 @@ public:
     inline std::string to_str(){
         return std::to_string(this->_num_val);
     }
-
+    inline T get(){
+        return _num_val;
+    }
 };
 
 }

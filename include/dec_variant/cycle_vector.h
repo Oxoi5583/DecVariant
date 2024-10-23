@@ -41,6 +41,9 @@ public:
         ret = _data[_index];
         return true;
     }
+    inline T get(){
+        return _data[_index];
+    }
 };
 
 }
