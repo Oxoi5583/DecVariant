@@ -32,7 +32,7 @@ public:
         _size = _data.size();
     }
 
-    bool next(T& ret){
+    bool next(T& ret = T()){
         if(_index >= _size){
             _index = 0;
         }else{
