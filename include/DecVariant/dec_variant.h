@@ -30,14 +30,18 @@ public:
 
 }
 
+#include <DecVariant/dec_variant_ext/arithmetic.h>
+
 #define DEC_VARIANT_MAIN
 #ifndef DEC_VARIANT_SUB
 
-#include <dec_variant/one_way_bool.h>
-#include <dec_variant/unique_id.h>
-#include <dec_variant/limited_numeric.h>
-#include <dec_variant/random_server.h>
-#include <dec_variant/random_code.h>
-#include <dec_variant/random_num.h>
+#include <DecVariant/dec_variant/one_way_bool.h>
+#include <DecVariant/dec_variant/unique_id.h>
+#include <DecVariant/dec_variant/limited_numeric.h>
+#include <DecVariant/dec_variant/random_server.h>
+#include <DecVariant/dec_variant/random_code.h>
+#include <DecVariant/dec_variant/random_num.h>
+#include <DecVariant/dec_variant/cycle_numeric.h>
+#include <DecVariant/dec_variant/cycle_vector.h>
 
 #endif

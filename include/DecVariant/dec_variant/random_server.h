@@ -3,7 +3,7 @@
 
 #ifndef DEC_VARIANT_MAIN
     #define DEC_VARIANT_SUB
-    #include <dec_variant.h>
+    #include <DecVariant/dec_variant.h>
 #endif
 
 #include <cstddef>

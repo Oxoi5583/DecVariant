@@ -3,11 +3,11 @@
 
 #ifndef DEC_VARIANT_MAIN
     #define DEC_VARIANT_SUB
-    #include <dec_variant.h>
+    #include <DecVariant/dec_variant.h>
 #endif
 
 #ifndef DEC_VARIANT_RANDOM_SERVER
-    #include <dec_variant/random_server.h>
+    #include <DecVariant/dec_variant/random_server.h>
 #endif
 
 namespace DecVar {

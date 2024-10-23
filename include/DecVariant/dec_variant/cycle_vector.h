@@ -3,7 +3,7 @@
 
 #ifndef DEC_VARIANT_MAIN
     #define DEC_VARIANT_SUB
-    #include <dec_variant.h>
+    #include <DecVariant/dec_variant.h>
 #endif
 
 #include <vector>
@@ -18,6 +18,7 @@ private:
     std::vector<T> _data;
     index _index = 0;
     index _size;
+    T _val;
 public:
     CycleVector() 
     : DecVariant(DecVariantType::CYCLE_VECTOR){}
@@ -32,17 +33,20 @@ public:
         _size = _data.size();
     }
 
-    bool next(T& ret = T()){
-        if(_index >= _size){
+    bool next(){
+        if(_index >= _size - 1){
             _index = 0;
         }else{
             _index++;
         }
-        ret = _data[_index];
+        _val = _data[_index];
         return true;
     }
     inline T get(){
-        return _data[_index];
+        return _val;
+    }
+    inline int size(){
+        return _size;
     }
 };
 

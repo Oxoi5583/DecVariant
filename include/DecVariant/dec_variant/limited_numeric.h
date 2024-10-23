@@ -4,7 +4,7 @@
 
 #ifndef DEC_VARIANT_MAIN
     #define DEC_VARIANT_SUB
-    #include <dec_variant.h>
+    #include <DecVariant/dec_variant.h>
 #endif
 
 #include <string>
@@ -13,8 +13,6 @@
 #include <concepts>
 namespace DecVar {
 
-template<typename T>
-concept arithmetic = std::integral<T> or std::floating_point<T>;
 
 template<typename T>
 requires arithmetic<T>
