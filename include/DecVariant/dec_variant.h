@@ -43,5 +43,6 @@ public:
 #include <DecVariant/dec_variant/random_num.h>
 #include <DecVariant/dec_variant/cycle_numeric.h>
 #include <DecVariant/dec_variant/cycle_vector.h>
+#include <DecVariant/dec_variant/lock_and_key.h>
 
 #endif

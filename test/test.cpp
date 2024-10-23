@@ -1,18 +1,18 @@
+#include "DecVariant/dec_variant/lock_and_key.h"
 #include <cstddef>
 #include <DecVariant/dec_variant.h>
 #include <iostream>
-#include <vector>
 
 int main(){
-    DecVar::CycleVector<int> _cv;
-    for(size_t i = 0; i < 100; i++){
-        _cv.push_back(i);
-    }
+    auto _p = LOCK_KEY_GENERATOR->create_pair_of_lock_key();
+    DecVar::Lock _l = _p.first;
+    DecVar::Key _k = _p.second;
 
-    int ret;
-    while (_cv.next()) {
-        ret = _cv.get();
-        std::cout << ret << std::endl;
+    _l << _k;
+
+
+    if (_l) {
+        std::cout << "Lock was opened." << std::endl;
     }
 
     return 0;
