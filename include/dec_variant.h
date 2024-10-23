@@ -31,5 +31,6 @@ public:
 
 #include <dec_variant/one_way_bool.h>
 #include <dec_variant/unique_id.h>
+#include <dec_variant/limited_numeric.h>
 
 #endif
