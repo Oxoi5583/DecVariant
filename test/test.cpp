@@ -8,7 +8,7 @@ int main(){
     DecVar::Lock _l = _p.first;
     DecVar::Key _k = _p.second;
 
-    _l << _k;
+    _lock << _key;
 
 
     if (_l) {
