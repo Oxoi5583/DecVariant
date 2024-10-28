@@ -45,5 +45,6 @@ public:
 #include <DecVariant/dec_variant/cycle_vector.h>
 #include <DecVariant/dec_variant/lock_and_key.h>
 #include <DecVariant/dec_variant/fsm.h>
+#include <DecVariant/dec_variant/safe_ptr.h>
 
 #endif

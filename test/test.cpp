@@ -1,5 +1,4 @@
 #include <DecVariant/dec_variant.h>
-#include <DecVariant/dec_variant/safe_ptr.h>
 #include <iostream>
 #include <string>
 

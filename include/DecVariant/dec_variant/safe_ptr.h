@@ -19,7 +19,7 @@ namespace DecVar {
     //  This Smart Pointer var will only be deleted after all copy was destructed.   //
     //  The design of this smart pointer is for ensure the existence of the pointer  //
     //  and prevent the illegal access.                                              //
-    //  Not thread safe yet.                                                         //
+    //  Not thread-safe supported yet.                                                         //
     ///////////////////////////////////////////////////////////////////////////////////
 
 template<typename  T>
