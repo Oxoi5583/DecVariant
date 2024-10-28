@@ -39,17 +39,17 @@ public:
             _ptr_map.emplace(_uid , _ptr);
             _ptr_ref.emplace(_uid , 1);
         }
-        std::cout << "Register Ptr " << *_ptr_map[_uid] << std::endl;
+        //std::cout << "Register Ptr " << *_ptr_map[_uid] << std::endl;
     }
     inline void register_ptr(UniqueId& _uid){
         _ptr_ref[_uid]++;
-        std::cout << "Register Ptr " << *_ptr_map[_uid] << std::endl;
+        //std::cout << "Register Ptr " << *_ptr_map[_uid] << std::endl;
     }
     inline void release_ptr(UniqueId& _uid){
-        std::cout << "Release Ptr val " << *_ptr_map[_uid] << std::endl;
+        //std::cout << "Release Ptr val " << *_ptr_map[_uid] << std::endl;
         _ptr_ref[_uid]--;
         if(_ptr_ref[_uid] <= 0){
-        std::cout << "Ptr Ref is 0. Var Deleted" << std::endl;
+        //std::cout << "Ptr Ref is 0. Var Deleted" << std::endl;
         
             T* _ptr  = _ptr_map[_uid];
             delete _ptr;
@@ -89,7 +89,7 @@ public:
     : _server(_another._server)
     , _uid(_another._uid)
     , _ptr(_another._ptr){
-        std::cout << "Construct by _another SafePtr" << std::endl;
+        //std::cout << "Construct by _another SafePtr" << std::endl;
         _server->register_ptr(_uid, _ptr);
     }
     static SafePtr New(T _val){
@@ -136,9 +136,9 @@ int main(){
     test(int_ptr);
     auto str_ptr = test2();
     
-    std::cout << *int_ptr << std::endl;
-    std::cout << *str_ptr << std::endl;
-    std::cout << DecVar::SafePtrServer<int>::get_singleton()->get_ptr_count() << std::endl;
+    //std::cout << *int_ptr << std::endl;
+    //std::cout << *str_ptr << std::endl;
+    //std::cout << DecVar::SafePtrServer<int>::get_singleton()->get_ptr_count() << std::endl;
     
     return 0;
 }

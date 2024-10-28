@@ -15,16 +15,14 @@ DecVar::SafePtr<string> test2(){
 }
 
 int main(){
-    auto _p = LOCK_KEY_GENERATOR->create_pair_of_lock_key();
-    DecVar::Lock _l = _p.first;
-    DecVar::Key _k = _p.second;
+    DecVar::SafePtr<int> int_ptr = DecVar::SafePtr<int>::New(50);
 
-    _l << _k;
-
-
-    if (_l) {
-        std::cout << "Lock was opened." << std::endl;
-    }
-
+    test(int_ptr);
+    auto str_ptr = test2();
+    
+    std::cout << *int_ptr << std::endl;
+    std::cout << *int_ptr << std::endl;
+    std::cout << DecVar::SafePtrServer<int>::get_singleton()->get_ptr_count() << std::endl;
+    
     return 0;
 }
