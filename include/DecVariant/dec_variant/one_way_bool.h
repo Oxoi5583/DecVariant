@@ -13,11 +13,11 @@ namespace DecVar {
 
 
 struct OneWayBool : public DecVariant {
-    //////////////////////////////////////////////////////////////////////
-    //  A Simple struct which share the same behaviour with bool        //
-    //  Yet if the class used as a condition, the val will be filped    //
-    //  This struct was design for a one-way-checker                    //
-    //////////////////////////////////////////////////////////////////////
+    /*
+    A Simple struct which share the same behaviour with bool
+    Yet if the class used as a condition, the val will be filped
+    This struct was design for a one-way-checker
+    */
 public:
     OneWayBool(bool _nv = false) 
         : DecVariant(DecVariantType::ONE_WAY_BOOL) 
