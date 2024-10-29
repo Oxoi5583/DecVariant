@@ -75,20 +75,22 @@ private:
     SafePtrServer<T>* _server;
     UniqueId _uid;
     T* _ptr;
-public:
+
+
     SafePtr(T _val)
     : _server(SafePtrServer<T>::get_singleton())
     , _uid(UniqueId())
     , _ptr(new T(_val)){
         _server->register_ptr(_uid, _ptr);
     }
+public:
     SafePtr(const SafePtr<T>& _another)
     : _server(_another._server)
     , _uid(_another._uid)
     , _ptr(_another._ptr){
         _server->register_ptr(_uid, _ptr);
     }
-    static SafePtr New(T _val){
+    static SafePtr create(T _val){
         return SafePtr<T>(_val);
     }
 
