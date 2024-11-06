@@ -14,6 +14,7 @@
 
 #ifndef DEC_VARIANT_MAIN
     #define DEC_VARIANT_SUB
+    #include <DecVariant/dec_variant/random_num.h>
     #include <DecVariant/dec_variant/range_map.h>
     #include <DecVariant/dec_variant.h>
 #endif
@@ -56,6 +57,15 @@ public:
             load_options();
         }
         return _range_map.lookup(_k);
+    }
+    inline int min(){
+        return _range_map.min();
+    }
+    inline int max(){
+        return _range_map.max();
+    }
+    inline int rand(){
+        return RandomNum(min(),max()).get();
     }
 private:
     RangeMap<T> _range_map;

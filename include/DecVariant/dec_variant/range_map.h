@@ -189,6 +189,12 @@ public:
     inline void clear_result_cache(){
         _cache_result.clear();
     }
+    inline int min(){
+        return _min_range;
+    }
+    inline int max(){
+        return _max_range;
+    }
 };
 
 
