@@ -34,13 +34,20 @@ public:
         return  _v;
     }
     inline bool operator==(const OneWayBool& _bool){
-        bool old_val = _bool._val;
-        this->_val = !_bool._val;
-        return _bool._val;
+        return this->_val == _bool._val;
+    }
+    inline bool operator!=(const OneWayBool& _bool){
+        return this->_val != _bool._val;
+    }
+    inline bool operator==(const bool& _bool){
+        return this->_val == _bool;
+    }
+    inline bool operator!=(const bool& _bool){
+        return this->_val != _bool;
     }
     inline explicit operator bool(){
         bool old_val = this->_val;
-        this->_val = !this->_val;
+        this->_val = false;
         return old_val;
     }
 

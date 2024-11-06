@@ -46,5 +46,8 @@ public:
 #include <DecVariant/dec_variant/lock_and_key.h>
 #include <DecVariant/dec_variant/fsm.h>
 #include <DecVariant/dec_variant/safe_ptr.h>
+#include <DecVariant/dec_variant/range_map.h>
+#include <DecVariant/dec_variant/weight_option.h>
+
 
 #endif
