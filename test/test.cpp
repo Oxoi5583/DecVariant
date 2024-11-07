@@ -1,3 +1,4 @@
+#include "DecVariant/dec_variant/dynamic_weight_option.h"
 #include <DecVariant/dec_variant.h>
 #include <cstddef>
 #include <iostream>
@@ -10,36 +11,34 @@ using namespace std;
 
 int main(){
     std::cout << "START" << std::endl;
-    DecVar::WeightOption<string> _wo;
-    _wo.set_range(0, 150);
-    _wo.register_option(10, "A");
-    _wo.register_option(25, "B");
-    _wo.register_option(50, "C");
-    _wo.register_option(80, "D");
-    _wo.register_option(65, "E");
-    _wo.register_option(65, "G");
-    _wo.register_option(100, "F");
-    _wo.load_options();
-
-    /*
-    std::cout << -100 << " : " << _wo.query(-100) << std::endl;
-    std::cout << 1 << " : "  << _wo.query(1) << std::endl;
-    std::cout << 65 << " : "  << _wo.query(65) << std::endl;
-    std::cout << 95 << " : "  << _wo.query(95) << std::endl;
-    std::cout << 45 << " : "  << _wo.query(45) << std::endl;
-    std::cout << 79 << " : "  << _wo.query(79) << std::endl;
-    std::cout << 81 << " : "  << _wo.query(81) << std::endl;
-    */
-    /*
-    for(size_t i = 0; i < 100; i++){
-        int _r = _wo.rand();
-        std::cout << _r << " : " << _wo.query(_r) << std::endl;
-    }
-    */
-
-    std::cout << _wo.min() << std::endl;
-    std::cout << _wo.max() << std::endl;
+    DecVar::DynamicWeightOption<string> _dwo;
     
+    int a = 30;
+    _dwo.register_option(10, "A");
+    _dwo.register_option(20, "B");
+    _dwo.register_option(&a, "C");
+    _dwo.register_option(40, "D");
+    _dwo.register_option(900, "E");
+
+    std::map<string,int> _test_map;
+    _test_map.emplace("A",0);
+    _test_map.emplace("B",0);
+    _test_map.emplace("C",0);
+    _test_map.emplace("D",0);
+
+    int total = 0;
+    for(size_t i = 0; i < 100000; i++){
+        string _a = _dwo.get_rand_result();
+        //std::cout << _a << std::endl;
+
+        total++;
+        _test_map[_a]++;
+    }
+
+    for(auto& it : _test_map){
+        std::cout << it.first << " : " << it.second << " ( " << (double)it.second/(double)total *100 << "% )" << std::endl;
+        
+    }
 
     std::cout << "END" << std::endl;
     return 0;
