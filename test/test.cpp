@@ -1,13 +1,10 @@
-#include "DecVariant/dec_variant/dynamic_weight_option.h"
 #include <DecVariant/dec_variant.h>
 #include <cstddef>
 #include <iostream>
 #include <string>
-#include <vector>
+
 
 using namespace std;
-
-
 
 int main(){
     std::cout << "START" << std::endl;

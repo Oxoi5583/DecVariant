@@ -19,54 +19,51 @@
 
 namespace DecVar {
 
-typedef int Weight;
-typedef int Key;
-
-
-
-
 template<typename T>
 class DynamicWeightOption {
+
+typedef int Weight;
+
 protected:
 
-template<typename F>
-struct Option{
-public:
-    Option(Option<F>& _another)
-    : _static_weight(_another._static_weight)
-    , _weight_ptr(_another._weight_ptr)
-    , _value(_another._value)
-    , _is_weight_static(_another._is_weight_static){}
-    Option(Weight* _input_weight, F _input_value)
-    : _static_weight(0)
-    , _weight_ptr(_input_weight)
-    , _value(_input_value)
-    , _is_weight_static(false){}
-    Option(Weight _input_weight, F _input_value)
-    : _static_weight(_input_weight)
-    , _weight_ptr(&_static_weight)
-    , _value(_input_value)    
-    , _is_weight_static(true){}
-    ~Option(){}
-    
+    template<typename F>
+    struct Option{
+    public:
+        Option(Option<F>& _another)
+        : _static_weight(_another._static_weight)
+        , _weight_ptr(_another._weight_ptr)
+        , _value(_another._value)
+        , _is_weight_static(_another._is_weight_static){}
+        Option(Weight* _input_weight, F _input_value)
+        : _static_weight(0)
+        , _weight_ptr(_input_weight)
+        , _value(_input_value)
+        , _is_weight_static(false){}
+        Option(Weight _input_weight, F _input_value)
+        : _static_weight(_input_weight)
+        , _weight_ptr(&_static_weight)
+        , _value(_input_value)    
+        , _is_weight_static(true){}
+        ~Option(){}
+        
 
-    inline Weight get_weight(){
-        return *_weight_ptr;
-    }
-    inline F get_value(){
-        return _value;
-    }
-    inline bool get_is_weight_static(){
-        return _is_weight_static;
-    }
+        inline Weight get_weight(){
+            return *_weight_ptr;
+        }
+        inline F get_value(){
+            return _value;
+        }
+        inline bool get_is_weight_static(){
+            return _is_weight_static;
+        }
 
-private:
-    bool    _is_weight_static = false;
-    Weight  _static_weight = 0;
-    Weight* _weight_ptr = nullptr;
-    F       _value;
+    private:
+        bool    _is_weight_static = false;
+        Weight  _static_weight = 0;
+        Weight* _weight_ptr = nullptr;
+        F       _value;
 
-};
+    };
 
 public:
     inline void register_option(Weight* _weight, T _value){
