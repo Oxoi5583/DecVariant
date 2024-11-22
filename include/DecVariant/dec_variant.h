@@ -2,7 +2,6 @@
 
 namespace DecVar {
 
-
 enum class DecVariantType{
     ONE_WAY_BOOL,
     UNIQUE_ID,
@@ -16,7 +15,7 @@ enum class DecVariantType{
 struct DecVariant {
     /////////////////////////////////////////
     //  The Base class for all DecVariant  //
-    ////////////////////////////////////////
+    /////////////////////////////////////////
 protected:
     DecVariantType var_type;
 public:

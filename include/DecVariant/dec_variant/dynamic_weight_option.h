@@ -11,6 +11,7 @@
 #include <memory>
 #include <numeric>
 #include <vector>
+
 #ifndef DEC_VARIANT_MAIN
     #define DEC_VARIANT_SUB
     #include <DecVariant/dec_variant/random_num.h>

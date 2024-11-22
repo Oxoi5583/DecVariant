@@ -26,7 +26,7 @@ public:
     inline RandomCode(length _l = 20) 
     : DecVariant(DecVariantType::RANDOM_CODE) 
     , _len(_l) 
-    , _val(RandomServer::get_singleton()->get_randow_code(_l)){};
+    , _val(RandomServer::get_singleton()->get_uniform_distr_random_code(_l)){};
     inline ~RandomCode(){};
 
 
