@@ -15,11 +15,12 @@
 #include <vector>
 #include <memory>
 
+
+
 #ifndef DEC_VARIANT_MAIN
     #define DEC_VARIANT_SUB
     #include <DecVariant/dec_variant/random_num.h>
     #include <DecVariant/dec_variant/range_map.h>
-    #include <DecVariant/dec_variant.h>
 #endif
 
 namespace DecVar {
@@ -89,9 +90,6 @@ public:
     }
     inline int max(){
         return _range_map.max();
-    }
-    inline int rand(){
-        return RandomNum(min(),max()).get();
     }
 private:
     RangeMap<T> _range_map;
